@@ -6,15 +6,20 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.Button
+import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
@@ -34,6 +39,8 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import com.example.seriousproject.R
+import com.example.seriousproject.components.VideoDialog
 import com.example.seriousproject.interfaces.Item
 import java.util.Locale
 
@@ -51,22 +58,30 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
             .verticalScroll(rememberScrollState())
             .padding(8.dp)
     ) {
-        Image(
-            painter = item.image,
-            contentDescription = item.title,
-            contentScale = ContentScale.Crop,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(300.dp)
-                .clip(shape = RoundedCornerShape(10.dp))
-                .shadow(elevation = 4.dp, RoundedCornerShape(10.dp))
-                .clickable { openDialog.value = true }
-        )
+        Box(modifier = Modifier.clickable { openDialog.value = true }) {
+            Image(
+                painter = item.image,
+                contentDescription = item.title,
+                contentScale = ContentScale.Crop,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(300.dp)
+                    .clip(shape = RoundedCornerShape(10.dp))
+                    .shadow(elevation = 4.dp, RoundedCornerShape(10.dp))
+            )
+            Icon(
+                imageVector = Icons.Default.Menu,
+                tint = Color.White,
+                contentDescription = "więcej materiałów na temat produktu",
+                modifier = Modifier
+                    .size(50.dp)
+                    .align(Alignment.BottomEnd)
+                    .padding(8.dp)
+            )
+        }
 
         when {
-            openDialog.value -> Dialog(onDismissRequest = { openDialog.value = false }) {
-                Text("moja dupa")
-            }
+            openDialog.value -> VideoDialog(onDismissRequest = { openDialog.value = false }, R.raw.bateria)
         }
 
         Row(
@@ -75,16 +90,13 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = item.title,
-                color = Color.Black,
-                style = TextStyle(
+                text = item.title, color = Color.Black, style = TextStyle(
                     fontSize = 20.sp, fontWeight = FontWeight.Bold, shadow = Shadow(
                         color = Color.Black.copy(alpha = 0.25f),
                         offset = Offset(0f, 4f),
                         blurRadius = 2f
                     )
-                ),
-                modifier = Modifier.weight(weight = 1f)
+                ), modifier = Modifier.weight(weight = 1f)
             )
 
             Text(
