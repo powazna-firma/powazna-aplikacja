@@ -104,10 +104,26 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally),
             modifier = Modifier.fillMaxWidth()
         ) {
-            CategoryCard(category = Category(title = "Drukarki", image = painterResource(R.drawable.skaner)), navController)
-            CategoryCard(category = Category(title = "Skanery", image = painterResource(R.drawable.skaner)), navController)
-            CategoryCard(category = Category(title = "Tonery", image = painterResource(R.drawable.skaner)), navController)
-            CategoryCard(category = Category(title = "Inne", image = painterResource(R.drawable.skaner)), navController)
+            CategoryCard(
+                category = Category(
+                    title = "Drukarki", image = painterResource(R.drawable.skaner)
+                ), navController
+            )
+            CategoryCard(
+                category = Category(
+                    title = "Skanery", image = painterResource(R.drawable.skaner)
+                ), navController
+            )
+            CategoryCard(
+                category = Category(
+                    title = "Tonery", image = painterResource(R.drawable.skaner)
+                ), navController
+            )
+            CategoryCard(
+                category = Category(
+                    title = "Inne", image = painterResource(R.drawable.skaner)
+                ), navController
+            )
         }
 
         Text(

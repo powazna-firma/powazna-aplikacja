@@ -37,7 +37,7 @@ data class Category(
 fun CategoryCard(category: Category, navController: NavController, modifier: Modifier = Modifier) {
     Card(
         elevation = CardDefaults.cardElevation(), onClick = {
-            navController.navigate(ScreenPage.ItemDetails.route)
+            navController.navigate(ScreenPage.ItemList.route)
         }, modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth(0.4f)

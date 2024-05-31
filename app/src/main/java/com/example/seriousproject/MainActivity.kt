@@ -40,6 +40,7 @@ import com.example.seriousproject.components.ItemCard
 import com.example.seriousproject.components.pages.ItemDetailsPage
 import com.example.seriousproject.components.pages.ItemListPage
 import com.example.seriousproject.components.pages.MainPage
+import com.example.seriousproject.interfaces.Item
 import com.example.seriousproject.ui.theme.SeriousProjectTheme
 import kotlinx.coroutines.launch
 
@@ -114,7 +115,12 @@ class MainActivity : ComponentActivity() {
                                 ItemListPage(navController)
                             }
                             composable(route = ScreenPage.ItemDetails.route) {
-                                ItemDetailsPage()
+                                ItemDetailsPage(item = Item(
+                                    price = 300f,
+                                    description = "Gra i trąbi",
+                                    title = "Drukarka",
+                                    image = painterResource(id = R.drawable.skaner)
+                                ))
                             }
                         }
                     }
