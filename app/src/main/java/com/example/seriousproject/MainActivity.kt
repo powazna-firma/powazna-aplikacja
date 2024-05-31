@@ -111,7 +111,7 @@ class MainActivity : ComponentActivity() {
                                 MainPage()
                             }
                             composable(route = ScreenPage.ItemList.route) {
-                                ItemListPage()
+                                ItemListPage(navController)
                             }
                             composable(route = ScreenPage.ItemDetails.route) {
                                 ItemDetailsPage()
