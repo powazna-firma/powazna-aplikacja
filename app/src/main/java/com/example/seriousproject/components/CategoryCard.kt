@@ -1,21 +1,15 @@
 package com.example.seriousproject.components
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeight
-import androidx.compose.foundation.layout.requiredWidth
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.TextStyle
@@ -37,7 +31,7 @@ data class Category(
 fun CategoryCard(category: Category, navController: NavController, modifier: Modifier = Modifier) {
     Card(
         elevation = CardDefaults.cardElevation(), onClick = {
-            navController.navigate(ScreenPage.ItemList.route)
+            navController.navigate(ScreenPage.Category1List.route)
         }, modifier = Modifier
             .padding(16.dp)
             .fillMaxWidth(0.4f)
