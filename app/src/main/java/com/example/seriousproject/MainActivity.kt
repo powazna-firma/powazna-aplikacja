@@ -109,14 +109,6 @@ class MainActivity : ComponentActivity() {
                             }
                         })
                     }) { innerPadding ->
-//                        Column(modifier = Modifier.padding(innerPadding)) {
-//                            ItemCard()
-//                        }
-//                        NavHost(
-//                            navController = navController,
-//                            startDestination = "",
-//                            modifier = Modifier.padding(innerPadding)
-//                        )
                         NavHost(
                             navController = navController,
                             startDestination = ScreenPage.Main.route,
@@ -130,7 +122,7 @@ class MainActivity : ComponentActivity() {
                             }
                             composable(route = ScreenPage.ItemDetails.route) {
                                 ItemDetailsPage(item = Item(
-                                    price = 300f,
+                                    price = 299.99f,
                                     description = "Gra i trąbi",
                                     title = "Drukarka",
                                     image = painterResource(id = R.drawable.skaner)

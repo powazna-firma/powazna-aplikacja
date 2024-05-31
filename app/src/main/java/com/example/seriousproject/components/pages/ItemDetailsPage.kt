@@ -1,18 +1,15 @@
 package com.example.seriousproject.components.pages
 
+import android.icu.text.NumberFormat
+import android.icu.util.Currency
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.requiredHeight
-import androidx.compose.foundation.layout.requiredWidth
-import androidx.compose.foundation.layout.wrapContentHeight
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
@@ -27,19 +24,20 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.seriousproject.R
 import com.example.seriousproject.interfaces.Item
+import java.util.Locale
 
 @Composable
 fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
-
+    val format = NumberFormat.getCurrencyInstance(Locale("pl", "PL"))
+//    format.currency = Currency.getInstance("PLN")
+    val price = format.format(item.price)
     Column(
         verticalArrangement = Arrangement.spacedBy(15.dp, Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -48,15 +46,14 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
             .padding(8.dp)
     ) {
         Image(
-            painter = painterResource(id = R.drawable.skaner),
-            contentDescription = "image 1",
+            painter = item.image,
+            contentDescription = item.title,
             contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(300.dp)
                 .clip(shape = RoundedCornerShape(10.dp))
                 .shadow(elevation = 4.dp, RoundedCornerShape(10.dp))
-
         )
 
         Row(
@@ -65,7 +62,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = "Drukarka z interfejsem w kodzie morsa",
+                text = item.title,
                 color = Color.Black,
                 style = TextStyle(
                     fontSize = 20.sp, fontWeight = FontWeight.Bold, shadow = Shadow(
@@ -78,7 +75,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
             )
 
             Text(
-                text = "299,99 zł",
+                text = price,
                 color = Color(0xfff5f5f5),
                 fontStyle = FontStyle.Italic,
                 textAlign = TextAlign.End,
