@@ -4,6 +4,7 @@ import android.icu.text.NumberFormat
 import android.icu.util.Currency
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -16,6 +17,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -30,6 +33,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.window.Dialog
 import com.example.seriousproject.interfaces.Item
 import java.util.Locale
 
@@ -38,6 +42,8 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
     val format = NumberFormat.getCurrencyInstance(Locale("pl", "PL"))
 //    format.currency = Currency.getInstance("PLN")
     val price = format.format(item.price)
+
+    val openDialog = remember { mutableStateOf(false) }
     Column(
         verticalArrangement = Arrangement.spacedBy(15.dp, Alignment.Top),
         horizontalAlignment = Alignment.CenterHorizontally,
@@ -54,7 +60,14 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 .height(300.dp)
                 .clip(shape = RoundedCornerShape(10.dp))
                 .shadow(elevation = 4.dp, RoundedCornerShape(10.dp))
+                .clickable { openDialog.value = true }
         )
+
+        when {
+            openDialog.value -> Dialog(onDismissRequest = { openDialog.value = false }) {
+                Text("moja dupa")
+            }
+        }
 
         Row(
             horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.Start),
