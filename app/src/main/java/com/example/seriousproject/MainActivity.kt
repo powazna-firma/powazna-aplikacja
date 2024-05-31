@@ -108,7 +108,7 @@ class MainActivity : ComponentActivity() {
                             modifier = Modifier.padding(innerPadding)
                         ) {
                             composable(route = ScreenPage.Main.route) {
-                                MainPage()
+                                MainPage(navController, modifier = Modifier.padding(16.dp))
                             }
                             composable(route = ScreenPage.ItemList.route) {
                                 ItemListPage(navController)
