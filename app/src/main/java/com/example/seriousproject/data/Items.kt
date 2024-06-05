@@ -1,81 +1,83 @@
 package com.example.seriousproject.data
 
+import android.content.res.Resources
 import androidx.compose.ui.res.painterResource
 import com.example.seriousproject.R
 import com.example.seriousproject.interfaces.Item
+import kotlin.coroutines.coroutineContext
 
 val PeryferiaList = listOf(Item(
-    title = "Słuchawki wzmacniane taśmą",
+    title = Resources.getSystem().getString(R.string.wired_headphones),
     image = R.drawable.sluchawki,
     price = 40.99f,
-    description = "dupsko"
+    description = Resources.getSystem().getString(R.string.wired_headphones_desc)
 ), Item(
-    title= "kontroler do konsoli Windows XP",
+    title= Resources.getSystem().getString(R.string.console_controller),
     image = R.drawable.kontroler,
     price = 80.99f,
-    description = "dupsko2"
+    description = Resources.getSystem().getString(R.string.console_controller_desc)
 ), Item(
-    title = "Skaner kompatybilny z USB",
+    title = Resources.getSystem().getString(R.string.scanner),
     image = R.drawable.skaner,
     price = 299.99f,
-    description = "dupsko3"
+    description = Resources.getSystem().getString(R.string.scanner_desc)
 ), Item(
-    title = "Zaślepka do łączy na peryferia",
+    title = Resources.getSystem().getString(R.string.usb_cover),
     image = R.drawable.zaslepka,
     price = 12.5f,
-    description = "dupsko4"
+    description = Resources.getSystem().getString(R.string.usb_cover_desc)
 ), Item(
-    title = "Przejściówka audio - audiojack",
+    title = Resources.getSystem().getString(R.string.audio_wave_adapter),
     image = R.drawable.przejsciowkaaudiojack,
     price = 1.99f,
-    description = "dupsko70"
+    description = Resources.getSystem().getString(R.string.audio_wave_adapter_desc)
 ), Item(
-    title = "Przejściówka fale elektromagnetyczne - PCIE",
+    title = Resources.getSystem().getString(R.string.radio_pcie_adapter),
     image = R.drawable.network,
     price = 10f,
-    description = "kwantoweDupsko"
+    description = Resources.getSystem().getString(R.string.radio_pcie_adapter_desc)
 ))
 
 val KableList = listOf(Item(
-    title = "Kabel X",
+    title = Resources.getSystem().getString(R.string.universal_cable_x),
     image = R.drawable.kabelx,
     price = 400f,
-    description = "dupsko5"
+    description = Resources.getSystem().getString(R.string.universal_cable_x_desc)
 ), Item(
-    title = "UsbB",
+    title = Resources.getSystem().getString(R.string.usb_b_cable),
     image = R.drawable.usbb,
     price = 20f,
-    description = "dupsko6"
+    description = Resources.getSystem().getString(R.string.usb_b_cable_desc)
 ), Item(
-    title = "Podwójny USB",
+    title = Resources.getSystem().getString(R.string.usb),
     image = R.drawable.doubleusb,
     price = 40f,
-    description = "dupsko69"
+    description = Resources.getSystem().getString(R.string.usb_desc)
 ), Item(
-    title = "ty kurwa VGA",
-    description = "Co ci to kurwa przeszkadza gówniarzu",
+    title = Resources.getSystem().getString(R.string.vga),
+    description = Resources.getSystem().getString(R.string.vga_desc),
     image = R.drawable.kabelbialy,
     price = 15f
 ))
 
 val GadzetyList = listOf(Item(
-    title = "Budzik z dużym guzikiem do walenia",
+    title = Resources.getSystem().getString(R.string.radio_alarm),
     image = R.drawable.budzikmanta,
     price = 150.01f,
-    description = "dupsko5"
+    description = Resources.getSystem().getString(R.string.radio_alarm_desc)
 ), Item(
-    title = "Szpachla do nakładania pasty termoprzewodzącej",
+    title = Resources.getSystem().getString(R.string.thermal_paste_spatula),
     image = R.drawable.szpachla,
     price = 66f,
-    description = "dupsko6"
+    description = Resources.getSystem().getString(R.string.thermal_paste_spatula_desc)
 ), Item(
-    title = "Pałka bateryjna",
+    title = Resources.getSystem().getString(R.string.laptop_battery),
     image = R.drawable.paka_bateryjna,
     price = 110f,
-    description = "dupsko7"
+    description = Resources.getSystem().getString(R.string.laptop_battery_desc)
 ), Item(
-    title = "Rysik do macbooków",
+    title = Resources.getSystem().getString(R.string.stylus),
     image = R.drawable.rysik,
     price = 670.99f,
-    description = "dupsko8"
+    description = Resources.getSystem().getString(R.string.stylus_desc)
 ))
