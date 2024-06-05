@@ -27,7 +27,7 @@
     <string name="stylus_desc">Umożliwia precyzyjne nawigowanie i rysowanie na ekranach dotykowych, idealny do pracy na tabletach i smartfonach.</string>
     <string name="radio_pcie_adapter">Przejściówka fale elektromagnetyczne - PCIE</string>
     <string name="radio_pcie_adapter_desc">Konwertuje sygnały fal radiowych na kompatybilne z portem PCIE, umożliwiając bezprzewodową łączność z komputerem.</string>
-    <string name="console_controller">kontroler do konsoli Windows XP</string>
+    <string name="console_controller">Kontroler do konsoli Windows XP</string>
     <string name="console_controller_desc">Umożliwia sterowanie grami na konsolach kompatybilnych z systemem Windows XP, zapewniając komfortową i intuicyjną rozgrywkę.</string>
     <string name="scanner">Skaner kompatybilny z USB</string>
     <string name="scanner_desc">Przetwarza dokumenty i obrazy do postaci cyfrowej, umożliwiając łatwe archiwizowanie i udostępnianie plików.</string>
@@ -37,7 +37,7 @@
     <string name="universal_cable_x_desc">Wszechstronny kabel, który umożliwia podłączenie różnorodnych urządzeń elektronicznych, zapewniając szybki transfer danych i stabilne połączenie.</string>
     <string name="add_to_cart">Dodaj do koszyka</string>
     <string name="product_desc">Opis Produktu</string>
-    <string name="serious_comp_desc">Jesteśmy poważną firmą.\\nNasza firma jest poważna.</string>
+    <string name="serious_comp_desc">Jesteśmy poważną firmą. Nasza firma jest poważna.</string>
     <string name="quality">Jakość</string>
     <string name="trust">Zaufanie</string>
     <string name="guarantee">Gwarancja</string>
@@ -46,9 +46,5 @@
     <string name="cables">Kable</string>
     <string name="gadgets">Gadżety</string>
     <string name="offer_otd">Oferta dnia</string>
-    <string name="home">Dom</string>
-    <string name="item_list_1">item_list_1</string>
-    <string name="item_list_2">item_list_2</string>
-    <string name="item_list_3">item_list_3</string>
-    <string name="item_details">item_details</string>
+    <string name="more_info">Więcej materiałów na temat produktu</string>
 </resources>
