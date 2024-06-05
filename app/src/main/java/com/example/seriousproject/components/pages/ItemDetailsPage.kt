@@ -76,7 +76,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
             Icon(
                 imageVector = Icons.Default.Menu,
                 tint = Color.White,
-                contentDescription = "więcej materiałów na temat produktu",
+                contentDescription = stringResource(id = R.string.more_info),
                 modifier = Modifier
                     .size(50.dp)
                     .align(Alignment.BottomEnd)
@@ -120,7 +120,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
 
         Button(onClick = { /*TODO*/ }, modifier = Modifier.fillMaxWidth()) {
             Text(
-                text = "Do koszyka", style = TextStyle(
+                text = stringResource(id = R.string.add_to_cart), style = TextStyle(
                     fontSize = 20.sp, fontWeight = FontWeight.Bold
                 )
             )
@@ -135,7 +135,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 .padding(all = 10.dp)
         ) {
             Text(
-                text = "Opis Produktu", color = Color.Black, style = TextStyle(
+                text = stringResource(id = R.string.product_desc), color = Color.Black, style = TextStyle(
                     fontSize = 14.sp, fontWeight = FontWeight.Bold
                 )
             )
@@ -158,7 +158,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 .padding(all = 10.dp)
         ) {
             Text(
-                text = "Opis Produktu", color = Color.Black, style = TextStyle(
+                text = stringResource(id = R.string.product_desc), color = Color.Black, style = TextStyle(
                     fontSize = 14.sp, fontWeight = FontWeight.Bold
                 )
             )

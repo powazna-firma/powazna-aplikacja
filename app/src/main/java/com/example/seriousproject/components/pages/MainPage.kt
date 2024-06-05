@@ -55,7 +55,7 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
         modifier = modifier.verticalScroll(rememberScrollState())
     ) {
         Text(
-            text = "Jesteśmy poważną firmą.\nNasza firma jest poważna.",
+            text = stringResource(id = R.string.serious_comp_desc),
             color = Color.Black,
             textAlign = TextAlign.Center,
             style = TextStyle(
@@ -72,26 +72,26 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
         ) {
             Button(onClick = { /*TODO*/ }, contentPadding = chipPadding) {
                 Text(
-                    text = "Jakość",
+                    text = stringResource(id = R.string.quality),
                     style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 )
             }
             Button(onClick = { /*TODO*/ }, contentPadding = chipPadding) {
                 Text(
-                    text = "Pewność",
+                    text = stringResource(id = R.string.trust),
                     style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 )
             }
             Button(onClick = { /*TODO*/ }, contentPadding = chipPadding) {
                 Text(
-                    text = "Gwarancja",
+                    text = stringResource(id = R.string.guarantee),
                     style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 )
             }
         }
 
         Text(
-            text = "Kategorie",
+            text = stringResource(id = R.string.categories),
             color = Color.Black,
             style = TextStyle(
                 fontSize = 20.sp, fontWeight = FontWeight.Bold
@@ -107,28 +107,24 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
         ) {
             CategoryCard(
                 category = Category(
-                    title = "Peryferia", image = painterResource(R.drawable.skaner)
+                    title = stringResource(id = R.string.peripherals), image = painterResource(R.drawable.skaner)
                 ), navController
             )
             CategoryCard(
                 category = Category(
-                    title = "Kable", image = painterResource(R.drawable.skaner)
+                    title = stringResource(id = R.string.cables), image = painterResource(R.drawable.skaner)
                 ), navController
             )
             CategoryCard(
                 category = Category(
-                    title = "Gadżety", image = painterResource(R.drawable.skaner)
+                    title = stringResource(id = R.string.gadgets), image = painterResource(R.drawable.skaner)
                 ), navController
             )
-//            CategoryCard(
-//                category = Category(
-//                    title = "Inne", image = painterResource(R.drawable.skaner)
-//                ), navController
-//            )
+
         }
 
         Text(
-            text = "Oferta dnia",
+            text = stringResource(id = R.string.offer_otd),
             color = Color.Black,
             style = TextStyle(
                 fontSize = 20.sp, fontWeight = FontWeight.Bold

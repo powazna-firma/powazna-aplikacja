@@ -24,6 +24,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -55,10 +56,10 @@ class MainActivity : ComponentActivity() {
                 scope.launch { drawerState.close() }
             }
             val title = when (navBackStackEntry?.destination?.route) {
-                ScreenPage.PeryferiaList.route -> "Peryferia"
-                ScreenPage.KableList.route -> "Kable"
-                ScreenPage.GadzetyList.route -> "Gadżety"
-                else -> "Poważna firma"
+                ScreenPage.PeryferiaList.route -> stringResource(id = R.string.peripherals)
+                ScreenPage.KableList.route -> stringResource(id = R.string.cables)
+                ScreenPage.GadzetyList.route -> stringResource(id = R.string.gadgets)
+                else -> stringResource(id = R.string.serious_company)
             }
 
             SeriousProjectTheme {
@@ -66,7 +67,7 @@ class MainActivity : ComponentActivity() {
                     ModalDrawerSheet {
                         Spacer(modifier = Modifier.height(16.dp))
                         DrawerNavLink(
-                            name = "strong główna",
+                            name = stringResource(id = R.string.main_page),
                             route = ScreenPage.Main.route,
                             onClick = {
                                 navController.navigate(ScreenPage.Main.route) {
@@ -79,19 +80,19 @@ class MainActivity : ComponentActivity() {
                             navController = navController
                         )
                         DrawerNavLink(
-                            name = "Peryferia",
+                            name = stringResource(id = R.string.peripherals),
                             route = ScreenPage.PeryferiaList.route,
                             onClick = onDrawerSelected,
                             navController = navController
                         )
                         DrawerNavLink(
-                            name = "Kable",
+                            name = stringResource(id = R.string.cables),
                             route = ScreenPage.KableList.route,
                             onClick = onDrawerSelected,
                             navController = navController
                         )
                         DrawerNavLink(
-                            name = "Gadżety",
+                            name = stringResource(id = R.string.gadgets),
                             route = ScreenPage.GadzetyList.route,
                             onClick = onDrawerSelected,
                             navController = navController
@@ -100,13 +101,12 @@ class MainActivity : ComponentActivity() {
                 }, drawerState = drawerState) {
                     Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
                         TopAppBar(title = {
-//                                Icon(painter = painterResource(id = R.drawable.logo), contentDescription = "logo", modifier = Modifier.width(40.dp))
                             Text(text = title)
                         }, navigationIcon = {
                             IconButton(onClick = { scope.launch { drawerState.open() } }) {
                                 Icon(
                                     imageVector = Icons.Default.Menu,
-                                    contentDescription = "Otwórz menu"
+                                    contentDescription = stringResource(id = R.string.open_menu)
                                 )
                             }
                         })
@@ -140,18 +140,3 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
-
-//@Composable
-//fun Greeting(name: String, modifier: Modifier = Modifier) {
-//    Text(
-//        text = "Hello $name!", modifier = modifier
-//    )
-//}
-//
-//@Preview(showBackground = true)
-//@Composable
-//fun GreetingPreview() {
-//    SeriousProjectTheme {
-//        Greeting("Android")
-//    }
-//}
