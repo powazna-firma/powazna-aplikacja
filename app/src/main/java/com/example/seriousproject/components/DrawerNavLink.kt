@@ -22,7 +22,7 @@ fun DrawerNavLink(
     NavigationDrawerItem(
         label = { Text(text = name) },
         selected = navBackStackEntry?.destination?.route == route,
-        onClick = {onClick(route)},
+        onClick = { onClick(route) },
         modifier = modifier.padding(NavigationDrawerItemDefaults.ItemPadding)
     )
 }

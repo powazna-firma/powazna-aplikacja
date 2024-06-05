@@ -25,9 +25,12 @@ fun ItemListPage(navController: NavController, items: List<Item>, modifier: Modi
         LazyColumn(
             verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.Top),
             horizontalAlignment = Alignment.CenterHorizontally,
-            modifier = Modifier.fillMaxSize().background(color = Color(0xffebebeb)).padding(
-                horizontal = 10.dp, vertical = 15.dp
-            )
+            modifier = Modifier
+                .fillMaxSize()
+                .background(color = Color(0xffebebeb))
+                .padding(
+                    horizontal = 10.dp, vertical = 15.dp
+                )
         ) {
             items(items) { item ->
                 ItemCard(item = item, navController)

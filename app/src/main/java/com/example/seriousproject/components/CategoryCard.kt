@@ -45,12 +45,11 @@ fun CategoryCard(category: Category, navController: NavController, modifier: Mod
                 .height(130.dp)
         )
         Text(
-            text = category.title,
-            textAlign = TextAlign.Center,
-            style = TextStyle(
+            text = category.title, textAlign = TextAlign.Center, style = TextStyle(
                 fontSize = 16.sp, fontWeight = FontWeight.Bold
-            ),
-            modifier = Modifier.fillMaxWidth().padding(4.dp)
+            ), modifier = Modifier
+                .fillMaxWidth()
+                .padding(4.dp)
         )
 
     }

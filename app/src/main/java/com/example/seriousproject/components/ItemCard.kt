@@ -6,6 +6,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -53,8 +54,7 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                 "item", item
             )
             navController.navigate(ScreenPage.ItemDetails.route)
-        }, modifier = Modifier
-            .fillMaxWidth()
+        }, modifier = Modifier.fillMaxWidth()
     ) {
         Row(
             horizontalArrangement = Arrangement.spacedBy(7.dp, Alignment.CenterHorizontally),
@@ -89,35 +89,27 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
             Box(
                 modifier = Modifier.fillMaxSize()
             ) {
+                Column(modifier = Modifier.padding(horizontal = 8.dp, vertical = 0.dp)) {
+                    Text(
+                        text = title, color = Color.Black, style = TextStyle(
+                            fontSize = 16.sp, fontWeight = FontWeight.Bold
+                        ), modifier = Modifier.fillMaxWidth()
+//                        .requiredHeight(height = 42.dp)
+                    )
+                    Text(
+                        text = description, color = Color.Black, style = TextStyle(
+                            fontSize = 13.sp
+                        ), modifier = Modifier.requiredWidth(width = 170.dp)
+//                        .requiredHeight(height = 36.dp)
+                    )
+                }
                 Text(
-                    text = title,
+                    text = price,
                     color = Color.Black,
                     style = TextStyle(
-                        fontSize = 16.sp, fontWeight = FontWeight.Bold
-                    ),
-                    modifier = Modifier
-                        .align(alignment = Alignment.TopStart)
-                        .fillMaxWidth()
-                        .requiredHeight(height = 42.dp)
-                )
-                Text(
-                    text = description,
-                    color = Color.Black,
-                    style = TextStyle(
-                        fontSize = 13.sp
-                    ),
-                    modifier = Modifier
-                        .align(alignment = Alignment.TopStart)
-                        .offset(
-                            x = 4.dp, y = 57.dp
-                        )
-                        .requiredWidth(width = 170.dp)
-                        .requiredHeight(height = 36.dp)
-                )
-                Text(
-                    text = price, color = Color.Black, style = TextStyle(
                         fontSize = 18.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.End
-                    ), modifier = Modifier
+                    ),
+                    modifier = Modifier
                         .align(alignment = Alignment.BottomEnd)
                         .requiredWidth(width = 90.dp)
                         .requiredHeight(height = 21.dp)

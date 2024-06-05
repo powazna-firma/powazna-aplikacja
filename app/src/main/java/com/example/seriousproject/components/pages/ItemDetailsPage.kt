@@ -86,7 +86,9 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
         }
 
         when {
-            openDialog.value -> VideoDialog(onDismissRequest = { openDialog.value = false }, R.raw.bateria)
+            openDialog.value -> VideoDialog(
+                onDismissRequest = { openDialog.value = false }, R.raw.bateria
+            )
         }
 
         Row(
@@ -136,7 +138,9 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 .padding(all = 10.dp)
         ) {
             Text(
-                text = stringResource(id = R.string.product_desc), color = Color.Black, style = TextStyle(
+                text = stringResource(id = R.string.product_desc),
+                color = Color.Black,
+                style = TextStyle(
                     fontSize = 14.sp, fontWeight = FontWeight.Bold
                 )
             )
@@ -159,7 +163,9 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 .padding(all = 10.dp)
         ) {
             Text(
-                text = stringResource(id = R.string.product_desc), color = Color.Black, style = TextStyle(
+                text = stringResource(id = R.string.product_desc),
+                color = Color.Black,
+                style = TextStyle(
                     fontSize = 14.sp, fontWeight = FontWeight.Bold
                 )
             )
