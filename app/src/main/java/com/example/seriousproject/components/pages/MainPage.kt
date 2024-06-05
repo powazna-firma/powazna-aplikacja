@@ -107,17 +107,17 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
         ) {
             CategoryCard(
                 category = Category(
-                    title = "Peryferia", image = painterResource(R.drawable.skaner)
+                    title = "Peryferia", image = painterResource(R.drawable.sluchawki)
                 ), navController
             )
             CategoryCard(
                 category = Category(
-                    title = "Kable", image = painterResource(R.drawable.skaner)
+                    title = "Kable", image = painterResource(R.drawable.kabelx)
                 ), navController
             )
             CategoryCard(
                 category = Category(
-                    title = "Gadżety", image = painterResource(R.drawable.skaner)
+                    title = "Gadżety", image = painterResource(R.drawable.rysik)
                 ), navController
             )
 //            CategoryCard(
@@ -142,7 +142,7 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
             item = Item(
                 title = R.string.universal_cable_x,
                 description = R.string.universal_cable_x_desc,
-                image = R.drawable.skaner,
+                image = R.drawable.kabelx,
                 price = 300f
             ), navController = navController
         )
