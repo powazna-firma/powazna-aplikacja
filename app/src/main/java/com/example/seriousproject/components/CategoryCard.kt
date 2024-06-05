@@ -32,7 +32,7 @@ fun CategoryCard(category: Category, navController: NavController, modifier: Mod
     Card(
         elevation = CardDefaults.cardElevation(), onClick = {
             navController.navigate(ScreenPage.PeryferiaList.route)
-        }, modifier = Modifier
+        }, modifier = modifier
             .padding(16.dp)
             .fillMaxWidth(0.4f)
     ) {

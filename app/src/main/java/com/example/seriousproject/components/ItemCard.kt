@@ -1,5 +1,6 @@
 package com.example.seriousproject.components
 
+import android.icu.text.NumberFormat
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -23,6 +24,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -32,10 +34,14 @@ import androidx.navigation.NavController
 import com.example.seriousproject.R
 import com.example.seriousproject.ScreenPage
 import com.example.seriousproject.interfaces.Item
+import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modifier) {
+    val format = NumberFormat.getCurrencyInstance(Locale("pl", "PL"))
+//    format.currency = Currency.getInstance("PLN")
+    val price = format.format(item.price)
     Card(
         elevation = CardDefaults.cardElevation(), onClick = {
             navController.navigate(ScreenPage.ItemDetails.route)
@@ -60,8 +66,9 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                     .background(color = Color.Black)
             ) {
                 Image(
-                    painter = painterResource(id = R.drawable.skaner),
-                    contentDescription = "image 1",
+                    painter = painterResource(id = item.image),
+                    contentDescription = item.title,
+                    contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .align(alignment = Alignment.TopStart)
                         .offset(
@@ -75,7 +82,7 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                 modifier = Modifier.fillMaxSize()
             ) {
                 Text(
-                    text = "Drukarka z interfejsem w kodzie morsa",
+                    text = item.title,
                     color = Color.Black,
                     style = TextStyle(
                         fontSize = 16.sp, fontWeight = FontWeight.Bold
@@ -89,7 +96,7 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                         .requiredHeight(height = 42.dp)
                 )
                 Text(
-                    text = "Wśród drukarek jak combi - gra i trąbi",
+                    text = item.description,
                     color = Color.Black,
                     style = TextStyle(
                         fontSize = 13.sp
@@ -103,7 +110,7 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                         .requiredHeight(height = 36.dp)
                 )
                 Text(
-                    text = "niecałe 300zł", color = Color.Black, style = TextStyle(
+                    text = price, color = Color.Black, style = TextStyle(
                         fontSize = 13.sp, fontWeight = FontWeight.Bold
                     ), modifier = Modifier
                         .align(alignment = Alignment.TopStart)

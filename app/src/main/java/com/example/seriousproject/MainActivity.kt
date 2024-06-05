@@ -33,6 +33,9 @@ import com.example.seriousproject.components.DrawerNavLink
 import com.example.seriousproject.components.pages.ItemDetailsPage
 import com.example.seriousproject.components.pages.ItemListPage
 import com.example.seriousproject.components.pages.MainPage
+import com.example.seriousproject.data.GadzetyList
+import com.example.seriousproject.data.KableList
+import com.example.seriousproject.data.PeryferiaList
 import com.example.seriousproject.interfaces.Item
 import com.example.seriousproject.ui.theme.SeriousProjectTheme
 import kotlinx.coroutines.launch
@@ -52,15 +55,15 @@ class MainActivity : ComponentActivity() {
                 scope.launch { drawerState.close() }
             }
             val title = when (navBackStackEntry?.destination?.route) {
-                ScreenPage.PeryferiaList.route -> "Kategoria 1"
-                ScreenPage.KableList.route -> "Kategoria 2"
-                ScreenPage.GadzetyList.route -> "Kategoria 3"
+                ScreenPage.PeryferiaList.route -> "Peryferia"
+                ScreenPage.KableList.route -> "Kable"
+                ScreenPage.GadzetyList.route -> "Gadżety"
                 else -> "Poważna firma"
             }
 
             val exampleItem = Item(
                 title = "Jamnik z fletem w dupie",
-                image = painterResource(id = R.drawable.skaner),
+                image = R.drawable.skaner,
                 description = "Proszę nie grać na flecie, jamnik bardzo tego nie lubi",
                 price = 20.45f
             )
@@ -123,20 +126,20 @@ class MainActivity : ComponentActivity() {
                                 MainPage(navController, modifier = Modifier.padding(16.dp))
                             }
                             composable(route = ScreenPage.PeryferiaList.route) {
-                                ItemListPage(navController, listOf(exampleItem, exampleItem, exampleItem))
+                                ItemListPage(navController, PeryferiaList)
                             }
                             composable(route = ScreenPage.KableList.route) {
-                                ItemListPage(navController, items = listOf(exampleItem))
+                                ItemListPage(navController, KableList)
                             }
                             composable(route = ScreenPage.GadzetyList.route) {
-                                ItemListPage(navController, items = listOf(exampleItem))
+                                ItemListPage(navController, GadzetyList)
                             }
                             composable(route = ScreenPage.ItemDetails.route) {
                                 ItemDetailsPage(item = Item(
                                     price = 299.99f,
                                     description = "Gra i trąbi",
                                     title = "Drukarka",
-                                    image = painterResource(id = R.drawable.skaner)
+                                    image = R.drawable.skaner
                                 ))
                             }
                         }

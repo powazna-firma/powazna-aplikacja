@@ -32,6 +32,7 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -60,7 +61,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
     ) {
         Box(modifier = Modifier.clickable { openDialog.value = true }) {
             Image(
-                painter = item.image,
+                painter = painterResource(id = item.image),
                 contentDescription = item.title,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier

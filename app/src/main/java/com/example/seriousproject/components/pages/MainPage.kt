@@ -141,7 +141,7 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
             item = Item(
                 title = "Drukarka",
                 description = "gra i trąbi",
-                image = painterResource(id = R.drawable.skaner),
+                image = R.drawable.skaner,
                 price = 300f
             ), navController = navController
         )
