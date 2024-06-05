@@ -33,6 +33,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -49,6 +50,8 @@ import java.util.Locale
 fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
     val format = NumberFormat.getCurrencyInstance(Locale("pl", "PL"))
 //    format.currency = Currency.getInstance("PLN")
+    val title = stringResource(id = item.title)
+    val description = stringResource(id = item.description)
     val price = format.format(item.price)
 
     val openDialog = remember { mutableStateOf(false) }
@@ -62,7 +65,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
         Box(modifier = Modifier.clickable { openDialog.value = true }) {
             Image(
                 painter = painterResource(id = item.image),
-                contentDescription = item.title,
+                contentDescription = title,
                 contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .fillMaxWidth()
@@ -91,7 +94,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
             modifier = Modifier.fillMaxWidth()
         ) {
             Text(
-                text = item.title, color = Color.Black, style = TextStyle(
+                text = title, color = Color.Black, style = TextStyle(
                     fontSize = 20.sp, fontWeight = FontWeight.Bold, shadow = Shadow(
                         color = Color.Black.copy(alpha = 0.25f),
                         offset = Offset(0f, 4f),

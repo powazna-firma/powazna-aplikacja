@@ -61,12 +61,6 @@ class MainActivity : ComponentActivity() {
                 else -> "Poważna firma"
             }
 
-            val exampleItem = Item(
-                title = "Jamnik z fletem w dupie",
-                image = R.drawable.skaner,
-                description = "Proszę nie grać na flecie, jamnik bardzo tego nie lubi",
-                price = 20.45f
-            )
             SeriousProjectTheme {
                 ModalNavigationDrawer(drawerContent = {
                     ModalDrawerSheet {

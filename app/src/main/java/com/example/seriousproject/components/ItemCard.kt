@@ -26,6 +26,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -42,6 +43,8 @@ import java.util.Locale
 fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modifier) {
     val format = NumberFormat.getCurrencyInstance(Locale("pl", "PL"))
 //    format.currency = Currency.getInstance("PLN")
+    val title = stringResource(id = item.title)
+    val description = stringResource(id = item.description)
     val price = format.format(item.price)
     Card(
         elevation = CardDefaults.cardElevation(), onClick = {
@@ -71,7 +74,7 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
             ) {
                 Image(
                     painter = painterResource(id = item.image),
-                    contentDescription = item.title,
+                    contentDescription = title,
                     contentScale = ContentScale.Crop,
                     modifier = Modifier
                         .align(alignment = Alignment.TopStart)
@@ -86,7 +89,7 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                 modifier = Modifier.fillMaxSize()
             ) {
                 Text(
-                    text = item.title,
+                    text = title,
                     color = Color.Black,
                     style = TextStyle(
                         fontSize = 16.sp, fontWeight = FontWeight.Bold
@@ -97,7 +100,7 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                         .requiredHeight(height = 42.dp)
                 )
                 Text(
-                    text = item.description,
+                    text = description,
                     color = Color.Black,
                     style = TextStyle(
                         fontSize = 13.sp

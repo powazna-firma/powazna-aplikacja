@@ -32,6 +32,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -106,24 +107,24 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
         ) {
             CategoryCard(
                 category = Category(
-                    title = "Drukarki", image = painterResource(R.drawable.skaner)
+                    title = "Peryferia", image = painterResource(R.drawable.skaner)
                 ), navController
             )
             CategoryCard(
                 category = Category(
-                    title = "Skanery", image = painterResource(R.drawable.skaner)
+                    title = "Kable", image = painterResource(R.drawable.skaner)
                 ), navController
             )
             CategoryCard(
                 category = Category(
-                    title = "Tonery", image = painterResource(R.drawable.skaner)
+                    title = "Gadżety", image = painterResource(R.drawable.skaner)
                 ), navController
             )
-            CategoryCard(
-                category = Category(
-                    title = "Inne", image = painterResource(R.drawable.skaner)
-                ), navController
-            )
+//            CategoryCard(
+//                category = Category(
+//                    title = "Inne", image = painterResource(R.drawable.skaner)
+//                ), navController
+//            )
         }
 
         Text(
@@ -139,8 +140,8 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
 
         ItemCard(
             item = Item(
-                title = "Drukarka",
-                description = "gra i trąbi",
+                title = R.string.universal_cable_x,
+                description = R.string.universal_cable_x_desc,
                 image = R.drawable.skaner,
                 price = 300f
             ), navController = navController
