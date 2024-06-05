@@ -41,11 +41,12 @@ import java.util.Locale
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modifier) {
-    val format = NumberFormat.getCurrencyInstance(Locale("pl", "PL"))
+    val format = NumberFormat.getCurrencyInstance()
+    val multiplier = if (format.currency.currencyCode == "USD") 0.25f else 1f
 //    format.currency = Currency.getInstance("PLN")
     val title = stringResource(id = item.title)
     val description = stringResource(id = item.description)
-    val price = format.format(item.price)
+    val price = format.format(item.price * multiplier)
     Card(
         elevation = CardDefaults.cardElevation(), onClick = {
             navController.currentBackStackEntry?.savedStateHandle?.set(
