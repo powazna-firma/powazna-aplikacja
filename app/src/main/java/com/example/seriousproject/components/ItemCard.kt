@@ -28,6 +28,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -89,10 +90,7 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                     ),
                     modifier = Modifier
                         .align(alignment = Alignment.TopStart)
-                        .offset(
-                            x = 0.dp, y = (-1).dp
-                        )
-                        .requiredWidth(width = 179.dp)
+                        .fillMaxWidth()
                         .requiredHeight(height = 42.dp)
                 )
                 Text(
@@ -111,13 +109,10 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                 )
                 Text(
                     text = price, color = Color.Black, style = TextStyle(
-                        fontSize = 13.sp, fontWeight = FontWeight.Bold
+                        fontSize = 18.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.End
                     ), modifier = Modifier
-                        .align(alignment = Alignment.TopStart)
-                        .offset(
-                            x = 95.dp, y = 105.dp
-                        )
-                        .requiredWidth(width = 96.dp)
+                        .align(alignment = Alignment.BottomEnd)
+                        .requiredWidth(width = 90.dp)
                         .requiredHeight(height = 21.dp)
                 )
             }
