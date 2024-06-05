@@ -135,12 +135,9 @@ class MainActivity : ComponentActivity() {
                                 ItemListPage(navController, GadzetyList)
                             }
                             composable(route = ScreenPage.ItemDetails.route) {
-                                ItemDetailsPage(item = Item(
-                                    price = 299.99f,
-                                    description = "Gra i trąbi",
-                                    title = "Drukarka",
-                                    image = R.drawable.skaner
-                                ))
+
+                                navController.previousBackStackEntry?.savedStateHandle?.get<Item>("item")
+                                    ?.let { it1 -> ItemDetailsPage(it1) }
                             }
                         }
                     }

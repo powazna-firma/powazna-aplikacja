@@ -45,6 +45,9 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
     val price = format.format(item.price)
     Card(
         elevation = CardDefaults.cardElevation(), onClick = {
+            navController.currentBackStackEntry?.savedStateHandle?.set(
+                "item", item
+            )
             navController.navigate(ScreenPage.ItemDetails.route)
         }, modifier = Modifier
             .fillMaxWidth()
