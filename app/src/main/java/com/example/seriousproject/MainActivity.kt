@@ -34,6 +34,7 @@ import com.example.seriousproject.components.DrawerNavLink
 import com.example.seriousproject.components.pages.ItemDetailsPage
 import com.example.seriousproject.components.pages.ItemListPage
 import com.example.seriousproject.components.pages.MainPage
+import com.example.seriousproject.components.pages.UlotkaPage
 import com.example.seriousproject.data.GadzetyList
 import com.example.seriousproject.data.KableList
 import com.example.seriousproject.data.PeryferiaList
@@ -127,6 +128,9 @@ class MainActivity : ComponentActivity() {
                             }
                             composable(route = ScreenPage.GadzetyList.route) {
                                 ItemListPage(navController, GadzetyList)
+                            }
+                            composable(route = ScreenPage.Ulotka.route) {
+                                UlotkaPage()
                             }
                             composable(route = ScreenPage.ItemDetails.route) {
 

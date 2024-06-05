@@ -40,6 +40,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.seriousproject.R
+import com.example.seriousproject.ScreenPage
 import com.example.seriousproject.components.Category
 import com.example.seriousproject.components.CategoryCard
 import com.example.seriousproject.components.ItemCard
@@ -54,6 +55,7 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.Top),
         modifier = modifier.verticalScroll(rememberScrollState())
     ) {
+        Image(painter = painterResource(id = R.drawable.logo), contentDescription = "ElektroBazar")
         Text(
             text = stringResource(id = R.string.serious_comp_desc),
             color = Color.Black,
@@ -70,21 +72,9 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.spacedBy(10.dp, Alignment.CenterHorizontally),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Button(onClick = { /*TODO*/ }, contentPadding = chipPadding) {
+            Button(onClick = { navController.navigate(ScreenPage.Ulotka.route) }, contentPadding = chipPadding) {
                 Text(
-                    text = stringResource(id = R.string.quality),
-                    style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold)
-                )
-            }
-            Button(onClick = { /*TODO*/ }, contentPadding = chipPadding) {
-                Text(
-                    text = stringResource(id = R.string.trust),
-                    style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold)
-                )
-            }
-            Button(onClick = { /*TODO*/ }, contentPadding = chipPadding) {
-                Text(
-                    text = stringResource(id = R.string.guarantee),
+                    text = stringResource(id = R.string.learn_more),
                     style = TextStyle(fontSize = 20.sp, fontWeight = FontWeight.Bold)
                 )
             }

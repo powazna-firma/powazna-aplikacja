@@ -2,6 +2,7 @@
 <resources>
     <string name="app_name">Serious Project</string>
     <string name="category_one">Category 1</string>
+    <string name="learn_more">Learn more</string>
     <string name="category_two">Category 2</string>
     <string name="category_three">Category 3</string>
     <string name="serious_company">Serious company</string>
