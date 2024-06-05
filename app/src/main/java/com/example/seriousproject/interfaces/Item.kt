@@ -3,8 +3,8 @@ package com.example.seriousproject.interfaces
 import androidx.compose.ui.graphics.painter.Painter
 
 data class Item(
-    val title: String,
+    val title: Int,
     val image: Int,
-    val description: String,
+    val description: Int,
     val price: Float,
 )
