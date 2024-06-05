@@ -16,8 +16,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
-import androidx.compose.material3.NavigationDrawerItem
-import androidx.compose.material3.NavigationDrawerItemDefaults
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
@@ -54,11 +52,18 @@ class MainActivity : ComponentActivity() {
                 scope.launch { drawerState.close() }
             }
             val title = when (navBackStackEntry?.destination?.route) {
-                ScreenPage.Category1List.route -> "Kategoria 1"
-                ScreenPage.Category2List.route -> "Kategoria 2"
-                ScreenPage.Category3List.route -> "Kategoria 3"
+                ScreenPage.PeryferiaList.route -> "Kategoria 1"
+                ScreenPage.KableList.route -> "Kategoria 2"
+                ScreenPage.GadzetyList.route -> "Kategoria 3"
                 else -> "Poważna firma"
             }
+
+            val exampleItem = Item(
+                title = "Jamnik z fletem w dupie",
+                image = painterResource(id = R.drawable.skaner),
+                description = "Proszę nie grać na flecie, jamnik bardzo tego nie lubi",
+                price = 20.45f
+            )
             SeriousProjectTheme {
                 ModalNavigationDrawer(drawerContent = {
                     ModalDrawerSheet {
@@ -77,20 +82,20 @@ class MainActivity : ComponentActivity() {
                             navController = navController
                         )
                         DrawerNavLink(
-                            name = "Kategoria 1",
-                            route = ScreenPage.Category1List.route,
+                            name = "Peryferia",
+                            route = ScreenPage.PeryferiaList.route,
                             onClick = onDrawerSelected,
                             navController = navController
                         )
                         DrawerNavLink(
-                            name = "Kategoria 2",
-                            route = ScreenPage.Category2List.route,
+                            name = "Kable",
+                            route = ScreenPage.KableList.route,
                             onClick = onDrawerSelected,
                             navController = navController
                         )
                         DrawerNavLink(
-                            name = "Kategoria 3",
-                            route = ScreenPage.Category3List.route,
+                            name = "Gadżety",
+                            route = ScreenPage.GadzetyList.route,
                             onClick = onDrawerSelected,
                             navController = navController
                         )
@@ -117,8 +122,14 @@ class MainActivity : ComponentActivity() {
                             composable(route = ScreenPage.Main.route) {
                                 MainPage(navController, modifier = Modifier.padding(16.dp))
                             }
-                            composable(route = ScreenPage.Category1List.route) {
-                                ItemListPage(navController)
+                            composable(route = ScreenPage.PeryferiaList.route) {
+                                ItemListPage(navController, listOf(exampleItem, exampleItem, exampleItem))
+                            }
+                            composable(route = ScreenPage.KableList.route) {
+                                ItemListPage(navController, items = listOf(exampleItem))
+                            }
+                            composable(route = ScreenPage.GadzetyList.route) {
+                                ItemListPage(navController, items = listOf(exampleItem))
                             }
                             composable(route = ScreenPage.ItemDetails.route) {
                                 ItemDetailsPage(item = Item(

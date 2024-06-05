@@ -20,13 +20,7 @@ import com.example.seriousproject.components.ItemCard
 import com.example.seriousproject.interfaces.Item
 
 @Composable
-fun ItemListPage(navController: NavController, modifier: Modifier = Modifier) {
-    val exampleItem = Item(
-        title = "Jamnik z fletem w dupie",
-        image = painterResource(id = R.drawable.skaner),
-        description = "Proszę nie grać na flecie, jamnik bardzo tego nie lubi",
-        price = 20.45f
-    )
+fun ItemListPage(navController: NavController, items: List<Item>, modifier: Modifier = Modifier) {
     Column(modifier = modifier) {
         LazyColumn(
             verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.Top),
@@ -35,7 +29,7 @@ fun ItemListPage(navController: NavController, modifier: Modifier = Modifier) {
                 horizontal = 10.dp, vertical = 15.dp
             )
         ) {
-            items(listOf(exampleItem, exampleItem, exampleItem)) { item ->
+            items(items) { item ->
                 ItemCard(item = item, navController)
             }
         }
