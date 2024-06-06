@@ -8,4 +8,6 @@ data class Item(
     val image: Int,
     val description: Int,
     val price: Float,
+    val video: Int,
+    val details: Int,
 ) : Serializable

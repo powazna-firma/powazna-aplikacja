@@ -88,7 +88,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
 
         when {
             openDialog.value -> VideoDialog(
-                onDismissRequest = { openDialog.value = false }, R.raw.bateria
+                onDismissRequest = { openDialog.value = false }, item.video
             )
         }
 
@@ -147,7 +147,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 )
             )
             Text(
-                text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                text = stringResource(id = item.details),
                 color = Color.Black,
                 style = TextStyle(
                     fontSize = 15.sp, fontFamily = Montserrat
@@ -156,6 +156,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
             )
         }
 
+        /*
         Column(
             verticalArrangement = Arrangement.spacedBy(10.dp, Alignment.Top),
             modifier = Modifier
@@ -179,6 +180,6 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 ),
                 modifier = Modifier.fillMaxWidth()
             )
-        }
+        }*/
     }
 }
