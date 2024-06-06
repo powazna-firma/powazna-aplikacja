@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.seriousproject.ScreenPage
+import com.example.seriousproject.ui.theme.Montserrat
 
 
 data class Category(
@@ -46,7 +47,7 @@ fun CategoryCard(category: Category, navController: NavController, modifier: Mod
         )
         Text(
             text = category.title, textAlign = TextAlign.Center, style = TextStyle(
-                fontSize = 16.sp, fontWeight = FontWeight.Bold
+                fontSize = 16.sp, fontWeight = FontWeight.Bold, fontFamily = Montserrat
             ), modifier = Modifier
                 .fillMaxWidth()
                 .padding(4.dp)

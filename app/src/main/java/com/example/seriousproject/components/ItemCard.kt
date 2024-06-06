@@ -37,6 +37,7 @@ import androidx.navigation.NavController
 import com.example.seriousproject.R
 import com.example.seriousproject.ScreenPage
 import com.example.seriousproject.interfaces.Item
+import com.example.seriousproject.ui.theme.Montserrat
 import java.util.Locale
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -92,22 +93,24 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                 Column(modifier = Modifier.padding(horizontal = 8.dp, vertical = 0.dp)) {
                     Text(
                         text = title, color = Color.Black, style = TextStyle(
-                            fontSize = 16.sp, fontWeight = FontWeight.Bold
+                            fontSize = 16.sp, fontWeight = FontWeight.Bold, fontFamily = Montserrat
                         ), modifier = Modifier.fillMaxWidth()
 //                        .requiredHeight(height = 42.dp)
                     )
                     Text(
                         text = description, color = Color.Black, style = TextStyle(
-                            fontSize = 13.sp
+                            fontSize = 13.sp,
+                            fontFamily = Montserrat
                         ), modifier = Modifier.requiredWidth(width = 170.dp)
-//                        .requiredHeight(height = 36.dp)
+                        .requiredHeight(height = 80.dp)
                     )
                 }
                 Text(
                     text = price,
                     color = Color.Black,
                     style = TextStyle(
-                        fontSize = 18.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.End
+                        fontSize = 18.sp, fontWeight = FontWeight.Bold, textAlign = TextAlign.End,
+                        fontFamily = Montserrat
                     ),
                     modifier = Modifier
                         .align(alignment = Alignment.BottomEnd)

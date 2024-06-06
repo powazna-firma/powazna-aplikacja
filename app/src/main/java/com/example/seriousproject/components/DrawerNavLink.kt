@@ -9,6 +9,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
+import com.example.seriousproject.ui.theme.Montserrat
 
 @Composable
 fun DrawerNavLink(
@@ -20,7 +21,7 @@ fun DrawerNavLink(
 ) {
     val navBackStackEntry by navController.currentBackStackEntryAsState()
     NavigationDrawerItem(
-        label = { Text(text = name) },
+        label = { Text(text = name, fontFamily = Montserrat) },
         selected = navBackStackEntry?.destination?.route == route,
         onClick = { onClick(route) },
         modifier = modifier.padding(NavigationDrawerItemDefaults.ItemPadding)

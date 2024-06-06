@@ -55,7 +55,7 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
         verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.Top),
         modifier = modifier.verticalScroll(rememberScrollState())
     ) {
-        Image(painter = painterResource(id = R.drawable.logo), contentDescription = "ElektroBazar")
+//        Image(painter = painterResource(id = R.drawable.logo), contentDescription = "ElektroBazar")
         Text(
             text = stringResource(id = R.string.serious_comp_desc),
             color = Color.Black,

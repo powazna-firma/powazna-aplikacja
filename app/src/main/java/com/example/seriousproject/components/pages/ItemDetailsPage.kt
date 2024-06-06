@@ -44,6 +44,7 @@ import androidx.compose.ui.window.Dialog
 import com.example.seriousproject.R
 import com.example.seriousproject.components.VideoDialog
 import com.example.seriousproject.interfaces.Item
+import com.example.seriousproject.ui.theme.Montserrat
 import java.util.Locale
 
 @Composable
@@ -102,7 +103,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                         color = Color.Black.copy(alpha = 0.25f),
                         offset = Offset(0f, 4f),
                         blurRadius = 2f
-                    )
+                    ), fontFamily = Montserrat
                 ), modifier = Modifier.weight(weight = 1f)
             )
 
@@ -110,9 +111,10 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 text = price,
                 color = Color(0xfff5f5f5),
                 fontStyle = FontStyle.Italic,
+                fontFamily = Montserrat,
                 textAlign = TextAlign.End,
                 style = TextStyle(
-                    fontSize = 20.sp, fontWeight = FontWeight.Bold
+                    fontSize = 20.sp, fontWeight = FontWeight.Bold, fontFamily = Montserrat
                 ),
                 modifier = Modifier
                     .clip(shape = RoundedCornerShape(32.dp))
@@ -124,7 +126,7 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
         Button(onClick = { /*TODO*/ }, modifier = Modifier.fillMaxWidth()) {
             Text(
                 text = stringResource(id = R.string.add_to_cart), style = TextStyle(
-                    fontSize = 20.sp, fontWeight = FontWeight.Bold
+                    fontSize = 20.sp, fontWeight = FontWeight.Bold, fontFamily = Montserrat
                 )
             )
         }
@@ -141,14 +143,14 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 text = stringResource(id = R.string.product_desc),
                 color = Color.Black,
                 style = TextStyle(
-                    fontSize = 14.sp, fontWeight = FontWeight.Bold
+                    fontSize = 14.sp, fontWeight = FontWeight.Bold, fontFamily = Montserrat
                 )
             )
             Text(
                 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 color = Color.Black,
                 style = TextStyle(
-                    fontSize = 15.sp
+                    fontSize = 15.sp, fontFamily = Montserrat
                 ),
                 modifier = Modifier.fillMaxWidth()
             )
@@ -166,14 +168,14 @@ fun ItemDetailsPage(item: Item, modifier: Modifier = Modifier) {
                 text = stringResource(id = R.string.product_desc),
                 color = Color.Black,
                 style = TextStyle(
-                    fontSize = 14.sp, fontWeight = FontWeight.Bold
+                    fontSize = 14.sp, fontWeight = FontWeight.Bold, fontFamily = Montserrat
                 )
             )
             Text(
                 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
                 color = Color.Black,
                 style = TextStyle(
-                    fontSize = 15.sp
+                    fontSize = 15.sp, fontFamily = Montserrat
                 ),
                 modifier = Modifier.fillMaxWidth()
             )

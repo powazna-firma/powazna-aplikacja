@@ -39,6 +39,7 @@ import com.example.seriousproject.data.GadzetyList
 import com.example.seriousproject.data.KableList
 import com.example.seriousproject.data.PeryferiaList
 import com.example.seriousproject.interfaces.Item
+import com.example.seriousproject.ui.theme.Montserrat
 import com.example.seriousproject.ui.theme.SeriousProjectTheme
 import kotlinx.coroutines.launch
 
@@ -102,7 +103,7 @@ class MainActivity : ComponentActivity() {
                 }, drawerState = drawerState) {
                     Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
                         TopAppBar(title = {
-                            Text(text = title)
+                            Text(text = title, fontFamily = Montserrat)
                         }, navigationIcon = {
                             IconButton(onClick = { scope.launch { drawerState.open() } }) {
                                 Icon(
