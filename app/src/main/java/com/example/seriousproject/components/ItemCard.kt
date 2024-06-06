@@ -102,7 +102,8 @@ fun ItemCard(item: Item, navController: NavController, modifier: Modifier = Modi
                             fontSize = 13.sp,
                             fontFamily = Montserrat
                         ), modifier = Modifier.requiredWidth(width = 170.dp)
-                        .requiredHeight(height = 80.dp)
+                            .padding(bottom = 15.dp)
+//                        .requiredHeight(height = 80.dp)
                     )
                 }
                 Text(
