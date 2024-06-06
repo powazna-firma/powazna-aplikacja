@@ -132,7 +132,9 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
                 title = R.string.universal_cable_x,
                 description = R.string.universal_cable_x_desc,
                 image = R.drawable.skaner,
-                price = 300f
+                price = 300f,
+                video = R.raw.kabel_x,
+                details = R.string.laptop_battery_det
             ), navController = navController
         )
 
