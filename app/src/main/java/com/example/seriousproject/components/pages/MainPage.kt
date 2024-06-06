@@ -131,10 +131,10 @@ fun MainPage(navController: NavController, modifier: Modifier = Modifier) {
             item = Item(
                 title = R.string.universal_cable_x,
                 description = R.string.universal_cable_x_desc,
-                image = R.drawable.skaner,
+                image = R.drawable.kabelx,
                 price = 300f,
                 video = R.raw.kabel_x,
-                details = R.string.laptop_battery_det
+                details = R.string.universal_cable_x_det
             ), navController = navController
         )
 
