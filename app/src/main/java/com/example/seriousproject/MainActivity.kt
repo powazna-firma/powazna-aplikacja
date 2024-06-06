@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -64,6 +65,12 @@ class MainActivity : ComponentActivity() {
                 else -> stringResource(id = R.string.serious_company)
             }
 
+            val subpage = when (navBackStackEntry?.destination?.route) {
+                ScreenPage.Ulotka.route -> true
+                ScreenPage.ItemDetails.route -> true
+                else -> false
+            }
+
             SeriousProjectTheme {
                 ModalNavigationDrawer(drawerContent = {
                     ModalDrawerSheet {
@@ -105,7 +112,9 @@ class MainActivity : ComponentActivity() {
                         TopAppBar(title = {
                             Text(text = title, fontFamily = Montserrat)
                         }, navigationIcon = {
-                            IconButton(onClick = { scope.launch { drawerState.open() } }) {
+                            if (subpage) IconButton(onClick = { navController.popBackStack() }) {
+                                Icon(imageVector = Icons.Default.ArrowBack, contentDescription = "Go Back")
+                            } else IconButton(onClick = { scope.launch { drawerState.open() } }) {
                                 Icon(
                                     imageVector = Icons.Default.Menu,
                                     contentDescription = stringResource(id = R.string.open_menu)
